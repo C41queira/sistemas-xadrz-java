@@ -1,8 +1,11 @@
 package br.com.chesssistem.application;
 
+import br.com.chesssistem.boardgame.Position;
+
 public class Program{
 
     public static void main(String[] args) {
-        System.out.println("Hello word");
+        Position p1 = new Position(1, 2);
+        System.out.println(p1);
     }
 }
