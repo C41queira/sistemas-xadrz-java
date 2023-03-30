@@ -1,11 +1,12 @@
 package br.com.chesssistem.application;
 
-import br.com.chesssistem.boardgame.Position;
+import br.com.chesssistem.chess.entites.ChessMatch;
 
 public class Program{
 
     public static void main(String[] args) {
-        Position p1 = new Position(1, 2);
-        System.out.println(p1);
+        
+        ChessMatch cm = new ChessMatch(); 
+        UI.printBoard(cm.getPieces());
     }
 }
