@@ -27,5 +27,14 @@ public class Board {
         this.column = column;
     } 
 
+    //metodo implemnetado para falar as posições da peça no tabuleiro a partir da linha e da coluna
+    public Piece piece(int row, int column){
+        return pieces[row][column]; 
+    }
+
     
+    //metodo implemnetado para falar as posições da peça no tabuleiro a partir da posição
+    public Piece piece(Position position){
+        return pieces[position.getRow()][position.getColumn()]; 
+    }
 }
