@@ -1,6 +1,7 @@
 package br.com.chesssistem.boardgame;
 
 public class Board {
+
     private int row; 
     private int column; 
     private Piece[][] pieces;
@@ -36,5 +37,11 @@ public class Board {
     //metodo implemnetado para falar as posições da peça no tabuleiro a partir da posição
     public Piece piece(Position position){
         return pieces[position.getRow()][position.getColumn()]; 
+    }
+
+    //Coloca a peça desejada na posição aplicada
+    public void placePiece(Piece piece, Position position){ 
+        pieces[position.getRow()][position.getColumn()] = piece; 
+        piece.position = position;
     }
 }
