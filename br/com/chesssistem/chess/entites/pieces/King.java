@@ -1,6 +1,6 @@
 package br.com.chesssistem.chess.entites.pieces;
 
-import br.com.chesssistem.boardgame.Board;
+import br.com.chesssistem.boardgame.entites.Board;
 import br.com.chesssistem.chess.entites.ChessPiece;
 import br.com.chesssistem.chess.enums.Color;
 

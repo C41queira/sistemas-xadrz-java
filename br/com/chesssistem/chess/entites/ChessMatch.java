@@ -1,7 +1,7 @@
 package br.com.chesssistem.chess.entites;
 
-import br.com.chesssistem.boardgame.Board;
-import br.com.chesssistem.boardgame.Position;
+import br.com.chesssistem.boardgame.entites.Board;
+import br.com.chesssistem.boardgame.entites.Position;
 import br.com.chesssistem.chess.entites.pieces.King;
 import br.com.chesssistem.chess.entites.pieces.Rook;
 import br.com.chesssistem.chess.enums.Color;

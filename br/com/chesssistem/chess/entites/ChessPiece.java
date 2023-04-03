@@ -1,7 +1,7 @@
 package br.com.chesssistem.chess.entites;
 
-import br.com.chesssistem.boardgame.Board;
-import br.com.chesssistem.boardgame.Piece;
+import br.com.chesssistem.boardgame.entites.Board;
+import br.com.chesssistem.boardgame.entites.Piece;
 import br.com.chesssistem.chess.enums.Color;
 
 //Classe criada para representar as peças do xadrez   

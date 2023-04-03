@@ -1,4 +1,4 @@
-package br.com.chesssistem.boardgame;
+package br.com.chesssistem.boardgame.entites;
 
 public class Position {
     private int row; 
