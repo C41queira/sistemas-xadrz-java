@@ -1,7 +1,6 @@
 package br.com.chesssistem.chess.entites;
 
 import br.com.chesssistem.boardgame.entites.Board;
-import br.com.chesssistem.boardgame.entites.Position;
 import br.com.chesssistem.chess.entites.pieces.King;
 import br.com.chesssistem.chess.entites.pieces.Rook;
 import br.com.chesssistem.chess.enums.Color;
@@ -34,9 +33,13 @@ public class ChessMatch {
         return mat; 
     }
 
+    private void placeNewPiece(char column, int row, ChessPiece chessPiece){
+        board.placePiece(chessPiece, new ChessPosition(column, row).toPosition());
+    }
+
     private void initialSetup(){
-        board.placePiece(new Rook(board, Color.WHITE), new Position(2, 1));
-        board.placePiece(new King(board, Color.WHITE), new Position(3, 2));
-        board.placePiece(new Rook(board, Color.BLACK), new Position(7, 4));
+        placeNewPiece('b', 6, new Rook(board, Color.WHITE));
+        placeNewPiece('e', 8,new King(board, Color.WHITE));
+        placeNewPiece('e', 1, new Rook(board, Color.BLACK));
     }
 }
