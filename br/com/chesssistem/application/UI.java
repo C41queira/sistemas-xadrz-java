@@ -1,6 +1,10 @@
 package br.com.chesssistem.application;
 
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
 import br.com.chesssistem.chess.entites.ChessPiece;
+import br.com.chesssistem.chess.entites.ChessPosition;
 import br.com.chesssistem.chess.enums.Color;
 
 public class UI {
@@ -25,6 +29,19 @@ public class UI {
 	public static final String ANSI_PURPLE_BACKGROUND = "\u001B[45m";
 	public static final String ANSI_CYAN_BACKGROUND = "\u001B[46m";
 	public static final String ANSI_WHITE_BACKGROUND = "\u001B[47m";
+
+
+    public static ChessPosition readyChessPosition(Scanner sc){
+        try {
+            String s = sc.next();
+            char column = sc.next().charAt(0); 
+            int  row = Integer.parseInt(s.substring(1));
+            return new ChessPosition(column, row); 
+        } catch (RuntimeException e) {
+            throw new InputMismatchException("ERROR reading ChessPosition. Valid values are from a1 to h8");
+        }
+        
+    }
 
     //Verifica se há ou não uma peça em determinado ponto do tabuleiro 
     private static void printPiece(ChessPiece piece) {

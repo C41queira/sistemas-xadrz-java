@@ -1,9 +1,12 @@
 package br.com.chesssistem.chess.entites;
 
 import br.com.chesssistem.boardgame.entites.Board;
+import br.com.chesssistem.boardgame.entites.Piece;
+import br.com.chesssistem.boardgame.entites.Position;
 import br.com.chesssistem.chess.entites.pieces.King;
 import br.com.chesssistem.chess.entites.pieces.Rook;
 import br.com.chesssistem.chess.enums.Color;
+import br.com.chesssistem.chess.exception.ChessException;
 
 
 //Classe feita para representar a partida de xadrez
@@ -31,6 +34,30 @@ public class ChessMatch {
             }
         }
         return mat; 
+    }
+
+    public ChessPiece performeChessMove(ChessPosition sourPosition, ChessPosition targPosition){
+        Position source = sourPosition.toPosition();
+        Position target = targPosition.toPosition();
+
+        validSourcePosition(source);
+
+        Piece capturedPiece = makeMove(source, target);
+
+        return (ChessPiece) capturedPiece; 
+    }
+
+    private Piece makeMove(Position source, Position target){
+        Piece p = board.removePiece(source); 
+        Piece capturedPiece = board.removePiece(target);
+        board.placePiece(p, target);
+        return capturedPiece; 
+    }
+
+    private void validSourcePosition(Position position){
+        if (!board.thereIsAPiece(position)) {
+            throw new ChessException("There no piece on source position");
+        }
     }
 
     private void placeNewPiece(char column, int row, ChessPiece chessPiece){
